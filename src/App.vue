@@ -4,7 +4,7 @@ import Sidebar from './components/Sidebar.vue';
 </script>
 
 <template>
-  <body class="bg-dark-base w-screen relative pl-[100px] pt-[100px] h-[120vh]">
+  <body class="bg-dark-base w-screen relative pl-[100px] pt-[100px] min-h-[100vh]">
     <Sidebar />
     <router-view />
     <BottomBar />

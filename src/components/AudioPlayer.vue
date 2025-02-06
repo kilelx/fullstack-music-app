@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { songsData } from '../../public/audio/songs'
+import { formatDuration } from '../utils/formatDuration'
 
 const audio = new Audio()
 const isPlaying = ref(false)
@@ -14,19 +15,13 @@ const volume = ref(1)
 const isDraggingVolume = ref(false)
 const isDraggingProgress = ref(false)
 
-const formatTime = (time: number): string => {
-    const minutes = Math.floor(time / 60)
-    const seconds = Math.floor(time % 60)
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
-}
-
 const updateProgress = () => {
     if (!isLoaded.value) return
     
     if (audio.duration) {
         const progressValue = (audio.currentTime / audio.duration) * 100
         progress.value = Math.max(0, Math.min(100, Math.round(progressValue * 100) / 100))
-        currentTime.value = formatTime(audio.currentTime)
+        currentTime.value = formatDuration(audio.currentTime)
     }
 }
 
@@ -133,7 +128,7 @@ const loadSong = () => {
         
         audio.addEventListener('canplaythrough', () => {
             isLoaded.value = true
-            duration.value = formatTime(audio.duration)
+            duration.value = formatDuration(audio.duration)
             if (isPlaying.value) {
                 audio.play().catch(error => {
                     console.error('Error playing audio:', error)
