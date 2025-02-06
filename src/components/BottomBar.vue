@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import shuffleIcon from '@/assets/icons/shuffle.svg'
+// import shuffleIcon from '@/assets/icons/shuffle.svg'
 import prevIcon from '@/assets/icons/previous.svg'
 import playIcon from '@/assets/icons/play.svg'
 import pauseIcon from '@/assets/icons/pause.svg'
@@ -32,8 +32,8 @@ const handleVolumeStart = (event: MouseEvent | TouchEvent) => {
             </div>
             <!-- Player -->
             <div class="w-full max-w-[750px] mx-auto">
-                <div class="flex gap-10 mx-auto items-center w-fit">
-                    <img :src="shuffleIcon" class="w-5 h-5 cursor-pointer opacity-50" />
+                <div class="flex mx-auto justify-between items-center gap-10 w-fit">
+                    <!-- <img :src="shuffleIcon" class="w-5 h-5 cursor-pointer opacity-50" /> -->
                     <img :src="prevIcon" class="w-5 h-5 cursor-pointer" @click="player?.prevSong" />
                     <div class="p-2.5 bg-secondary rounded-full shadow-yellow cursor-pointer" @click="player?.togglePlay">
                         <img v-if="player?.isPlaying" :src="pauseIcon" class="w-5 h-5" />

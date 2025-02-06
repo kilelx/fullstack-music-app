@@ -27,18 +27,18 @@ const sidebarLinks = ref([
     img: new URL("../assets/icons/videos.svg", import.meta.url).href,
     imgActive: new URL("../assets/icons/videos-filled.svg", import.meta.url).href,
   },
-  {
-    alt: "Profil",
-    route: "/profile",
-    img: new URL("../assets/icons/profile.svg", import.meta.url).href,
-    imgActive: new URL("../assets/icons/profile-filled.svg", import.meta.url).href,
-  },
-  {
-    alt: "Logout",
-    route: "/logout",
-    img: new URL("../assets/icons/logout.svg", import.meta.url).href,
-    imgActive: new URL("../assets/icons/logout-filled.svg", import.meta.url).href,
-  },
+  // {
+  //   alt: "Profil",
+  //   route: "/profile",
+  //   img: new URL("../assets/icons/profile.svg", import.meta.url).href,
+  //   imgActive: new URL("../assets/icons/profile-filled.svg", import.meta.url).href,
+  // },
+  // {
+  //   alt: "Logout",
+  //   route: "/logout",
+  //   img: new URL("../assets/icons/logout.svg", import.meta.url).href,
+  //   imgActive: new URL("../assets/icons/logout-filled.svg", import.meta.url).href,
+  // },
 ])
 </script>
 
@@ -57,7 +57,7 @@ const sidebarLinks = ref([
         />
       </ul>
     </div>
-    <div class="bg-dark-alt rounded-full py-6 px-4 mt-5">
+    <!-- <div class="bg-dark-alt rounded-full py-6 px-4 mt-5">
       <ul class="flex flex-col gap-8">
         <SidebarIcon 
           v-for="link in sidebarLinks.slice(4, sidebarLinks.length)" 
@@ -68,7 +68,7 @@ const sidebarLinks = ref([
           :imgActive="link.imgActive"
         />
       </ul>
-    </div>
+    </div> -->
     <div>
 
     </div>

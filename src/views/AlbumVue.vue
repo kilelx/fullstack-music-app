@@ -14,7 +14,7 @@ const album = computed(() => {
 </script>
 
 <template>
-  <div v-if="album" class="px-10 text-white">
+  <div v-if="album" class="text-white max-w-[1400px] ml-[60px]">
     <div class="flex items-end">
       <img
         :src="album.imgUrl"
