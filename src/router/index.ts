@@ -39,6 +39,11 @@ const router = createRouter({
       name: 'logout',
       component: LogoutVue
     },
+    {
+      path: '/album/:id',
+      name: 'album',
+      component: () => import('../views/AlbumVue.vue')
+    },
   ]
 })
 

@@ -1,11 +1,18 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 import SquareCardItem from './items/SquareCardItem.vue';
 import { albumsList } from '../mocks/mockAlbums';
+
+const router = useRouter();
 
 defineProps<{
   title: string;
   listType: string;
 }>()
+
+const handleAlbumClick = (albumId: number) => {
+  router.push(`/album/${albumId}`);
+}
 </script>
 
 <template>
@@ -22,6 +29,8 @@ defineProps<{
           :artist="album.artist" 
           :link="album.link"
           :imgUrl="album.imgUrl"
+          @click="handleAlbumClick(album.id)"
+          class="cursor-pointer"
         />
         <SquareCardItem 
           v-for="album in albumsList" 
